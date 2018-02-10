@@ -9,7 +9,7 @@ public int martingale()
     int bet = 10;
     while(money>bet)
     {
-        boolean win = play();
+        boolean win = play(); // Assuming that the play function is implemented elsewhere.
         if(win)
         {
             money += bet;
@@ -19,6 +19,10 @@ public int martingale()
         {
             money -= bet;
             bet *= 2;
+        }
+        if (money >= target)
+        {
+            break; //break if money value target has been reached or exceeded
         }
     }
     return money;
